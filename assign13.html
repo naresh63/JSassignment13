@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assign 13</title>
+  </head>
+  <body>
+    <script>
+            "use strict";
+            // 1.
+            // a.
+            let arr1 = [ 1, 2, 3, 4, 5 ];
+            let arr1_sum = arr1.reduce((total,val)=> total+val);
+            console.log('sum of ele of arr1 =',arr1_sum)
+
+            // b.
+            let avg_arr = arr1.reduce((a, b) => a + b, 0) / arr1.length;
+            console.log('avg is =',avg_arr)
+
+            // 2.
+            let students = [
+      { name: "John", marks: "92" },
+      { name: "Oliver", marks: "85" },
+      { name: "Michael", marks: "79" },
+      { name: "Dwight", marks: "95"},
+      { name: "Oscar", marks: "64" },
+      { name: "Kevin", marks: "48" },
+      ];
+      for(let i=0;i<students.length;i++){
+        if(Number(students[i].marks)> 90){
+          console.log("grade A");
+          students[i].grade = "A";
+        }else if(Number(students[i].marks)> 80){
+          console.log("grade B");
+          students[i].grade = "B";
+        }else if(Number(students[i].marks)> 70){
+          console.log("grade C");
+          students[i].grade = "C";
+        }else if(Number(students[i].marks)> 60){
+          console.log("grade D");
+          students[i].grade = "D";
+        }else if(Number(students[i].marks)> 50){
+          console.log("grade E");
+          students[i].grade = "E";
+        }else{
+          console.log("grade F");
+          students[i].grade = "F";
+        }
+      }
+      console.log(students);
+
+      // b.
+      let grade_stud = students.map((ele)=>ele.grade);
+      console.log(grade_stud);
+
+      // c. 
+       let grad_A = [];
+       let grad_B = [];
+       let grad_C = [];
+       let grad_D = [];
+       let grad_E = [];
+       let grad_F = [];
+      for(let i=0; i<students.length;i++){
+          if(students[i].grade === "A"){
+            grad_A.push(students[i])
+          }else if(students[i].grade === "B"){
+            grad_B.push(students[i])
+          }else if(students[i].grade === "C"){
+            grad_C.push(students[i])
+          }else if(students[i].grade === "D"){
+            grad_D.push(students[i])
+          }else if(students[i].grade === "E"){
+            grad_E.push(students[i])
+          }else if(students[i].grade === "F"){
+            grad_F.push(students[i])
+          } 
+      }
+      console.log('grade A :', grad_A );
+      console.log('grade B :', grad_B );
+      console.log('grade C :', grad_C );
+      console.log('grade D :', grad_D );
+      console.log('grade E :', grad_E );
+      console.log('grade F :', grad_F );
+
+    </script>
+  </body>
+</html>
